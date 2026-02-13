@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      overflow: hidden;
+      background: linear-gradient(to top, #1e3c72, #2a5298);
+      font-family: Arial, sans-serif;
+      position: relative;
+    }
+
+    .butterfly {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: white;
+      border-radius: 50%;
+      animation: fly linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fly {
+      0% { transform: translateY(100vh) translateX(0); }
+      50% { transform: translateY(40vh) translateX(120px); }
+      100% { transform: translateY(-10vh) translateX(-120px); }
+    }
+
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 40px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="butterfly" style="left:10%;animation-duration:18s;"></div>
+  <div class="butterfly" style="left:40%;animation-duration:22s;"></div>
+  <div class="butterfly" style="left:70%;animation-duration:20s;"></div>
+
+  <div class="content">
+    🎂 Happy Birthday 🎂
+  </div>
+
+</body>
+</html>
