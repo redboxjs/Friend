@@ -5,7 +5,6 @@
 <title>Birthday Wish</title>
 
 <style>
-
 *{
 margin:0;
 padding:0;
@@ -16,31 +15,31 @@ font-family:Arial, sans-serif;
 body{
 background:black;
 color:white;
-overflow:hidden;
 height:100vh;
+overflow:hidden;
 display:flex;
 justify-content:center;
 align-items:center;
+text-align:center;
 }
 
 .container{
-text-align:center;
 transition:1s;
 }
 
 h1{
-font-size:24px;
+font-size:22px;
 line-height:1.6;
 margin-bottom:30px;
 }
 
 button{
-padding:10px 25px;
+padding:12px 30px;
 margin:10px;
 border:none;
 cursor:pointer;
 font-size:16px;
-border-radius:25px;
+border-radius:30px;
 transition:.3s;
 }
 
@@ -79,14 +78,13 @@ visibility:visible;
 
 .content{
 display:flex;
-gap:30px;
-align-items:center;
-max-width:900px;
+flex-direction:column;
+gap:20px;
+max-width:500px;
 }
 
 .text{
-width:50%;
-font-size:18px;
+font-size:16px;
 line-height:1.8;
 }
 
@@ -102,11 +100,6 @@ to{
 opacity:1;
 transform:translateY(0);
 }
-}
-
-.image{
-width:50%;
-text-align:center;
 }
 
 .image img{
@@ -173,159 +166,12 @@ let words = text.split(" ");
 words.forEach((word,index)=>{
 let span = document.createElement("span");
 span.textContent = word + " ";
-span.style.animationDelay = index * 0.15 + "s";
+span.style.animationDelay = index * 0.12 + "s";
 container.appendChild(span);
 });
 
 }
 
-</script>
-
-</body>
-</html>display:inline-block;
-transform:translateY(20px);
-animation:fadeUp .5s forwards;
-}
-
-@keyframes fadeUp{
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-.image{
-width:50%;
-text-align:center;
-}
-
-.image img{
-max-width:100%;
-border-radius:20px;
-box-shadow:0 0 25px #ff004c;
-animation:fadeIn 2s;
-}
-
-@keyframes fadeIn{
-from{opacity:0;}
-to{opacity:1;}
-}
-
-]]></b:skin>
-</head>
-
-<body>
-
-<b:section id='main' showaddelement='no' maxwidgets='1'>
-<b:widget id='HTML1' type='HTML' locked='true'>
-<b:widget-settings>
-<b:widget-setting name='content'><![CDATA[
-
-<div class="container" id="first">
-<h1>
-Hey, Jarin 😇 <br>
-This is an unique wish Only for you 💐 <br>
-Are You ready? 🤗
-</h1>
-
-<button class="yes-btn" onclick="start()">Yes</button>
-<button class="no-btn" id="noBtn">No</button>
-</div>
-
-
-<div class="second" id="second">
-<div class="content">
-<div class="text" id="wishText"></div>
-<div class="image">
-<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjNwkWKKEdXKSNSz4r4L9kRSdkduqBnmUiTsHWUuhRBDGz_JR-FRm_6N3AUDSK888v4PYDANgzrFtbrE9SYmbT26BQS4EhWXtEqo9Vb66FbAtROBljejvHuZ1ev8im_23fYhcRyHIAPZkWp8C9UN5vJkn4mdqAHdLy2fJQQfRkhamHonCR0SRr-o0-LS3w/s320/1000003876.gif">
-</div>
-</div>
-</div>
-
-<audio id="bgMusic">
-<source src="https://github.com/redboxjs/jn/raw/refs/heads/main/Jn.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-
-const noBtn = document.getElementById("noBtn");
-
-noBtn.addEventListener("mouseover", function(){
-let x = Math.floor(Math.random()*300);
-let y = Math.floor(Math.random()*300);
-noBtn.style.left = x + "px";
-noBtn.style.top = y + "px";
-});
-
-function start(){
-
-document.getElementById("first").style.transform="translate(-50%,-150%)";
-document.getElementById("first").style.opacity="0";
-
-let second = document.getElementById("second");
-second.classList.add("show");
-
-document.getElementById("bgMusic").play();
-
-let text = `Happy birthday, my dear friend! A good friend like you is the blessing of my life. May happiness, peace, and success always prevail in your life. May all the hopes of your heart be fulfilled. Your absence hurts my heart. Never forget me. Keep me with you in every aspect of your life 🥰`;
-
-let container = document.getElementById("wishText");
-
-let words = text.split(" ");
-
-words.forEach((word,index)=>{
-let span = document.createElement("span");
-span.textContent = word + " ";
-span.style.animationDelay = index * 0.15 + "s";
-container.appendChild(span);
-});
-
-}
-
-</script>
-
-]]></b:widget-setting>
-</b:widget-settings>
-
-<b:includable id='main'>
-<b:widget-setting name='content'/>
-</b:includable>
-
-</b:widget>
-</b:section>
-
-</body>
-</html>  <div class="buttons">
-    <button id="yesBtn">Yes 💖</button>
-    <button id="noBtn">No 😅</button>
-  </div>
-</div>
-
-<script>
-const noBtn = document.getElementById("noBtn");
-const yesBtn = document.getElementById("yesBtn");
-const container = document.getElementById("mainContent");
-
-/* No Button Move */
-noBtn.addEventListener("click", () => {
-
-  const maxX = window.innerWidth - 150;
-  const maxY = window.innerHeight - 100;
-
-  const randomX = Math.floor(Math.random() * maxX);
-  const randomY = Math.floor(Math.random() * maxY);
-  
-
-
-
-  noBtn.style.left = randomX + "px";
-  noBtn.style.top = randomY + "px";
-});
-
-/* Yes Button Animation */
-yesBtn.addEventListener("click", () => {
-  container.classList.add("moveUp");
-});
 </script>
 
 </body>
