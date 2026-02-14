@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Happy Birthday</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Project</title>
 
   <style>
     * {
@@ -12,65 +13,25 @@
     }
 
     body {
-      height: 100vh;
-      overflow: hidden;
-      background: linear-gradient(to top, #1e3c72, #2a5298);
+      background-color: #000;   /* Pure Black */
+      color: #fff;              /* White Text */
       font-family: Arial, sans-serif;
-      position: relative;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    .butterfly {
-      position: absolute;
-      width: 80px;
-      animation: fly linear infinite;
-      opacity: 0.9;
-    }
-
-    @keyframes fly {
-      0% {
-        transform: translateY(100vh) translateX(0);
-      }
-      50% {
-        transform: translateY(40vh) translateX(120px);
-      }
-      100% {
-        transform: translateY(-10vh) translateX(-120px);
-      }
-    }
-
-    .content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      font-size: 40px;
+    .container {
       text-align: center;
-      font-weight: bold;
-      text-shadow: 0 0 20px rgba(0,0,0,0.4);
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Butterfly 1 -->
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjM7F0R1Yqqv79DSfGE6Jyugxpw0J1zi1gL64-QY8hy2rdyqnlwj3sq72HDfZAAc9U9xsmaDaZdMBOEF-jWmq8XcxESuRKx_0tpsWBvWaGpCAjFQNxCXyrjWHPN51kGzbRr51JJqGRXltdGiqGL6FO1iRzRkXnUI9HYd6Q7pcvjaGgm1cBagSLw03D70OmM/s530/1000003824.gif"
-       class="butterfly"
-       style="left:10%; animation-duration:18s;">
-
-  <!-- Butterfly 2 -->
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjM7F0R1Yqqv79DSfGE6Jyugxpw0J1zi1gL64-QY8hy2rdyqnlwj3sq72HDfZAAc9U9xsmaDaZdMBOEF-jWmq8XcxESuRKx_0tpsWBvWaGpCAjFQNxCXyrjWHPN51kGzbRr51JJqGRXltdGiqGL6FO1iRzRkXnUI9HYd6Q7pcvjaGgm1cBagSLw03D70OmM/s530/1000003824.gif"
-       class="butterfly"
-       style="left:40%; animation-duration:22s;">
-
-  <!-- Butterfly 3 -->
-  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjM7F0R1Yqqv79DSfGE6Jyugxpw0J1zi1gL64-QY8hy2rdyqnlwj3sq72HDfZAAc9U9xsmaDaZdMBOEF-jWmq8XcxESuRKx_0tpsWBvWaGpCAjFQNxCXyrjWHPN51kGzbRr51JJqGRXltdGiqGL6FO1iRzRkXnUI9HYd6Q7pcvjaGgm1cBagSLw03D70OmM/s530/1000003824.gif"
-       class="butterfly"
-       style="left:70%; animation-duration:20s;">
-
-  <div class="content">
-    🎂 Happy Birthday 🎂
+  <div class="container">
+    <h1>Black Mode Activated 🖤</h1>
   </div>
 
 </body>
