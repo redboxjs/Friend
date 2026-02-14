@@ -5,8 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Special Wish</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 <style>
 * {
   margin: 0;
@@ -120,9 +119,14 @@ const container = document.getElementById("mainContent");
 
 /* No Button Move */
 noBtn.addEventListener("click", () => {
- 
-const maxX = window.innerWidth - noBtn.offsetWidth;
-const maxY = window.innerHeight - noBtn.offsetHeight;
+
+  const maxX = window.innerWidth - 150;
+  const maxY = window.innerHeight - 100;
+
+  const randomX = Math.floor(Math.random() * maxX);
+  const randomY = Math.floor(Math.random() * maxY);
+  
+
 
 
   noBtn.style.left = randomX + "px";
