@@ -165,7 +165,7 @@ let words = text.split(" ");
 
 words.forEach((word,index)=>{
 let span = document.createElement("span");
-span.textContent = word + " ";
+span.innerHTML = word + "&nbsp;";
 span.style.animationDelay = index * 0.12 + "s";
 container.appendChild(span);
 });
