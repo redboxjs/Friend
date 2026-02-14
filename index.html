@@ -1,75 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Special Wish</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Special Wish</title>
 
-  <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Tapestry&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      background: #000;
-      color: #fff;
-      font-family: 'Poppins', sans-serif;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      overflow: hidden;
-    }
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
-    .container {
-      max-width: 800px;
-      padding: 20px;
-    }
+.container {
+  transition: 1s ease;
+}
 
-    .message {
-      font-size: 2rem;
-      line-height: 1.6;
-      letter-spacing: 1px;
-      animation: fadeIn 2s ease-in-out;
-      text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-    }
+.message {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  text-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
 
-    .highlight {
-      color: #ff4da6;
-      font-weight: 700;
-      text-shadow: 0 0 20px rgba(255, 77, 166, 0.8);
-    }
+.highlight {
+  color: #ff4da6;
+  text-shadow: 0 0 25px rgba(255,77,166,0.8);
+}
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+.buttons {
+  position: relative;
+}
 
-  </style>
+button {
+  padding: 12px 30px;
+  margin: 10px;
+  font-size: 18px;
+  border-radius: 30px;
+  border: 2px solid #ff4da6;
+  background: transparent;
+  color: #ff4da6;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+  animation: glow 1.5s infinite alternate;
+}
+
+button:hover {
+  background: #ff4da6;
+  color: #000;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 10px #ff4da6; }
+  to { box-shadow: 0 0 25px #ff4da6; }
+}
+
+/* Yes Animation */
+.moveUp {
+  transform: translateY(-200px);
+  opacity: 0;
+}
+
+#noBtn {
+  position: absolute;
+}
+</style>
 </head>
 
 <body>
 
-  <div class="container">
-    <div class="message">
-      Hey, <span class="highlight">Jarin 😇</span>.<br><br>
-      This is an unique wish Only for you 💐.<br><br>
-      Are You ready? 🤗
-    </div>
+<div class="container" id="mainContent">
+  <div class="message">
+    Hey, <span class="highlight">Jarin 😇</span> <br>
+    This is an unique wish Only for you 💐.
+    Are You ready? 🤗</br>
   </div>
 
+  <div class="buttons">
+    <button id="yesBtn">Yes 💖</button>
+    <button id="noBtn">No 😅</button>
+  </div>
+</div>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const container = document.getElementById("mainContent");
+
+/* No Button Move */
+noBtn.addEventListener("click", () => {
+  const maxX = window.innerWidth - 150;
+  const maxY = window.innerHeight - 100;
+
+  const randomX = Math.floor(Math.random() * maxX);
+  const randomY = Math.floor(Math.random() * maxY);
+
+  noBtn.style.left = randomX + "px";
+  noBtn.style.top = randomY + "px";
+});
+
+/* Yes Button Animation */
+yesBtn.addEventListener("click", () => {
+  container.classList.add("moveUp");
+});
+</script>
+
 </body>
-</html></body>
 </html>
